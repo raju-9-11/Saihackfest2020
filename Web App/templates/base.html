@@ -14,17 +14,104 @@
 
 <body>
     <nav class="navbar navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Blood Cell Prediction</a>
+        <div class="top-container">
+            <a class="navbar-brand" href="#" ><b>Blood Cell Type Prediction</b></a>
             <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Help</button>
+            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">About</button>
         </div>
     </nav>
+    <div class="left"><br />
+        <h3>
+            Facts About Blood and Blood Cells
+        </h3><br />
+        <h7>
+            This information explains the different parts of your blood and their functions. 
+
+            Your blood carries oxygen and nutrients to all of the cells in your body. Blood cells also fight infection and control bleeding.
+
+            Most blood cells are made in your bone marrow. They are constantly being made and replaced. How long a blood cell lasts before being replaced is called its lifespan.
+
+            Your blood is made up of 4 parts: red blood cells, white blood cells, platelets, and plasma.
+        </h7><br /><br />
+        <h3>
+        Parts of Your Blood
+        </h3><br />
+        <h4>
+        Red blood cells (erythrocytes)
+        </h4>
+        Red blood cells carry oxygen from your lungs to your tissues. They also bring carbon dioxide back to your lungs.
+
+        Red blood cells make up almost half of your blood. The lifespan of a red blood cell is around 120 days.
+        <h4><br />
+        White blood cells (leukocytes)
+        </h4>
+        White blood cells fight infection and are an important part of your immune system. They make up a very small part of your total blood (less than 1%).
+        <br /><br />
+        There are 3 types of white blood cells: granulocytes, monocytes, and lymphocytes. Each type has an important role.<br /><br />
+        <ul>
+            <li>There are 3 types of granulocytes:</li>
+            <ul>
+                <li><b>Neutrophils</b> help fight bacterial and fungal infections.</li>
+                <li><b>Basophils</b> are part of your body’s immune response. Their exact function isn’t well known.</li>
+                <li> <b>Eosinophils</b> help fight infections caused by parasites.</li>
+            </ul>
+            <li>Monocytes break down and remove foreign organisms and dying cells from your body.</li>
+            <li>Lymphocytes make up your immune system.</li>
+        </ul><br />
+        White blood cells have a wide range of lifespans, from hours to years.
+        <h4>
+            Platelets (thrombocytes)
+        </h4>
+        Platelets are small parts of cells. Their main function is to control bleeding. They make up a very small part of your blood (less than 1%). The lifespan of platelets is about 9 to 12 days.
+        <h4>
+        Plasma
+        </h4>
+        Plasma is the pale-yellow liquid part of your blood that holds all of your blood cells. It makes up a little over half of your total blood.<br /><br />
+
+        Plasma helps move water, nutrients, minerals, medications, and hormones throughout your body. It also carries waste products to your kidneys. Then your kidneys filter out the waste products from your blood. Plasma is made up of water, protein, lipids (fats). It carries water, fat-soluble nutrients, and other substances to and from the different organs.
+    </div>
     <div class="container">
         <div id="content" style="margin-top:2em">{% block content %}{% endblock %}</div>
+        <h2><b>Blood Cell Classifier</b></h2>
+
+        <div style="padding: 40px 0px 0px 30px;">
+            <form id="upload-file-2" method="post" enctype="multipart/form-data" onclick="myfunc()">
+                <label for="imageUpload2" class="upload-label">
+                    Select a image
+                </label>
+                <!-- <input type="file" name="file" id="imageUpload2" accept=".png, .jpg, .jpeg"> -->
+            </form>
+
+            <div class="image-section2" style="display:none;">
+                <div class="img-preview2">
+                    <div id="imagePreview2">
+                    </div>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-primary btn-lg " id="btn-predict-2">Predict!</button>
+                </div>
+            </div>
+
+            <div class="loader" style="display:none;"></div>
+            <div style="padding: 50px 0px 0px 0px;">
+                <i id="result2">
+                    <span> </span>
+                </i>
+            </div>
+
+        </div>
+    </div>
+    <div class="right">
+        <iframe src="https://www.who.int/news-room/events/detail/2020/06/14/default-calendar/world-blood-donor-day-2020"></iframe>
     </div>
 </body>
 
 <footer>
+    <script type="text/javascript">
+        function myfunc(){
+            alert("Under Construction");
+        }
+    </script>
     <script src="{{ url_for('static', filename='js/main.js') }}" type="text/javascript"></script>    
 </footer>
 

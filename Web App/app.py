@@ -66,8 +66,17 @@ def upload():
 
         # Make prediction
         preds = model_predict(file_path, model)
-
-        return preds
+        result=preds
+        if preds=="EOSINOPHIL":
+            result=result+": Eosinophils are a type of disease-fighting white blood cell. This condition most often indicates a parasitic infection, an allergic reaction or cancer. You can have high levels of eosinophils in your blood (blood eosinophilia) or in tissues at the site of an infection or inflammation (tissue eosinophilia)."
+        elif preds=="LYMPHOCYTE":
+            result=result+":A lymphocyte is a type of white blood cell in the vertebrate immune system. Lymphocytes include natural killer cells (which function in cell-mediated, cytotoxic innate immunity), T cells (for cell-mediated, cytotoxic adaptive immunity), and B cells (for humoral, antibody-driven adaptive immunity)."
+        elif preds=="MONOCYTE":
+            result=result+":Monocytes are a type of leukocyte, or white blood cell. They are the largest type of leukocyte and can differentiate into macrophages and myeloid lineage dendritic cells. As a part of the vertebrate innate immune system monocytes also influence the process of adaptive immunity."
+        else:
+            result=result+":Neutrophils are a type of white blood cell. In fact, most of the white blood cells that lead the immune system's response are neutrophils. There are four other types of white blood cells. Neutrophils are the most plentiful type, making up 55 to 70 percent of your white blood cells."
+        return result
+        
     return None
 
 
