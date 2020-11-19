@@ -14,11 +14,18 @@
 
 <body>
     <nav class="navbar navbar-dark bg-dark">
-        <div class="top-container">
+        <div class="top-container" >
             <a class="navbar-brand" href="#" ><b>Blood Cell Type Prediction</b></a>
-            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Help</button>
-            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">About</button>
+            <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active"><a class="nav-link" href="#"> <span class="fa fa-info"></span> About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list"></span> Menu</a></li>
+                </ul>
+            </div>
         </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
     </nav>
     <div class="left"><br />
         <h3>
@@ -72,14 +79,15 @@
     </div>
     <div class="container">
         <div id="content" style="margin-top:2em">{% block content %}{% endblock %}</div>
-        <h2><b>Blood Cell Classifier</b></h2>
+        
+        <!-- <h2><b>Blood Cell Classifier</b></h2>
 
         <div style="padding: 40px 0px 0px 30px;">
             <form id="upload-file-2" method="post" enctype="multipart/form-data" onclick="myfunc()">
                 <label for="imageUpload2" class="upload-label">
                     Select a image
                 </label>
-                <!-- <input type="file" name="file" id="imageUpload2" accept=".png, .jpg, .jpeg"> -->
+                <input type="file" name="file" id="imageUpload2" accept=".png, .jpg, .jpeg">
             </form>
 
             <div class="image-section2" style="display:none;">
@@ -97,7 +105,7 @@
                 <i id="result2">
                     <span> </span>
                 </i>
-            </div>
+            </div> -->
 
         </div>
     </div>

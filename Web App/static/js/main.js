@@ -23,6 +23,13 @@ $(document).ready(function () {
         $('#result').hide();
         readURL(this);
     });
+    $("#imageUpload2").change(function () {
+        $('.image-section-2').show();
+        $('#btn-predict-2').show();
+        $('#result2').text('');
+        $('#result2').hide();
+        readURL(this);
+    });
 
     // Predict
     $('#btn-predict').click(function () {
@@ -50,6 +57,9 @@ $(document).ready(function () {
                 console.log('Success!');
             },
         });
+        $('#predict').click(function(){
+            $('#prev').delay(800).fadeIn();
+        })
     });
 
 });

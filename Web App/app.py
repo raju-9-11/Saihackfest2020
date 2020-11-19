@@ -23,7 +23,7 @@ from gevent.pywsgi import WSGIServer
 app = Flask(__name__)
 
 # Model saved with Keras model.save()
-MODEL_PATH = 'models/model100.h5'
+MODEL_PATH = 'model/model100.h5'
 
 # Load your trained model
 model = tf.keras.models.load_model(MODEL_PATH)
@@ -68,7 +68,7 @@ def upload():
         preds = model_predict(file_path, model)
         result=preds
         if preds=="EOSINOPHIL":
-            result=result+": Eosinophils are a type of disease-fighting white blood cell. This condition most often indicates a parasitic infection, an allergic reaction or cancer. You can have high levels of eosinophils in your blood (blood eosinophilia) or in tissues at the site of an infection or inflammation (tissue eosinophilia)."
+            result=result+": Eosinophils, sometimes called eosinophiles or, less commonly, acidophils, are a variety of white blood cells and one of the immune system components responsible for combating multicellular parasites and certain infections in vertebrates."
         elif preds=="LYMPHOCYTE":
             result=result+":A lymphocyte is a type of white blood cell in the vertebrate immune system. Lymphocytes include natural killer cells (which function in cell-mediated, cytotoxic innate immunity), T cells (for cell-mediated, cytotoxic adaptive immunity), and B cells (for humoral, antibody-driven adaptive immunity)."
         elif preds=="MONOCYTE":
